@@ -1,4 +1,5 @@
 import turtle
+import time
 
 
 # Create your window/screen
@@ -79,14 +80,16 @@ while True:
         ball.sety(290)
         ball.dy *= -1
 
-    if ball.xcor() > 390:
-        ball.setx(390)
-        ball.dx *= -1
-
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        time.sleep(0.2)
+        ball.dx *= -1
+
     
     if ball.xcor() < -390:
-        ball.setx(-390)
+        ball.goto(0, 0)
         ball.dx *= -1
