@@ -36,31 +36,28 @@ ball.speed(0)
 
 
 # FUNCTIONS FOR MOVING PADDLES
-# Move left paddle up
+# Move paddles up and down
 def left_up():
     y = paddle1.ycor()
     y += 20
     paddle1.sety(y)
 
-# Move left paddle downwards
 def left_down():
     y = paddle1.ycor()
     y -= 20
     paddle1.sety(y)
 
-# Move right paddle up
 def right_up():
     y = paddle2.ycor()
     y += 20
     paddle2.sety(y)
 
-# Move right paddle downwards
 def right_down():
     y = paddle2.ycor()
     y -= 20
     paddle2.sety(y)
 
-# Listen events for moving paddles
+# Keybord binding for moving paddles
 wn.listen()
 wn.onkeypress(left_up, "w")
 wn.onkeypress(left_down, "s")
@@ -71,3 +68,4 @@ wn.onkeypress(right_down, "Down")
 # Events mainloop
 while True:
     wn.update()
+   
