@@ -42,17 +42,11 @@ def left_up():
     y += 20
     paddle1.sety(y)
 
-wn.listen()
-wn.onkeypress(left_up, "w")
-
 # Move left paddle downwards
 def left_down():
     y = paddle1.ycor()
     y -= 20
     paddle1.sety(y)
-
-wn.listen()
-wn.onkeypress(left_down, "s")
 
 # Move right paddle up
 def right_up():
@@ -60,17 +54,19 @@ def right_up():
     y += 20
     paddle2.sety(y)
 
-wn.listen()
-wn.onkeypress(right_up, "Up")
-
 # Move right paddle downwards
 def right_down():
     y = paddle2.ycor()
     y -= 20
     paddle2.sety(y)
 
+# Listen events for moving paddles
 wn.listen()
+wn.onkeypress(left_up, "w")
+wn.onkeypress(left_down, "s")
+wn.onkeypress(right_up, "Up")
 wn.onkeypress(right_down, "Down")
+
 
 # Events mainloop
 while True:
