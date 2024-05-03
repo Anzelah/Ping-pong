@@ -34,6 +34,14 @@ ball.shape("circle")
 ball.color("white")
 ball.speed(0)
 
+# Functions for moving left paddle up
+def left_up():
+    y = paddle1.ycor()
+    y += 20
+    paddle1.sety(y)
+
+wn.listen()
+wn.onkeypress(left_up, "w")
 
 # Events mainloop
 while True:
