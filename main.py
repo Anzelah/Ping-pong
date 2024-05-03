@@ -33,10 +33,11 @@ ball.penup()
 ball.shape("circle")
 ball.color("white")
 ball.speed(0)
+ball.dx = 0.7
+ball.dy = 0.7
 
 
-# FUNCTIONS FOR MOVING PADDLES
-# Move paddles up and down
+# Functions for moving paddles
 def left_up():
     y = paddle1.ycor()
     y += 20
@@ -68,4 +69,7 @@ wn.onkeypress(right_down, "Down")
 # Events mainloop
 while True:
     wn.update()
-   
+
+    # Move the ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
