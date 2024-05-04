@@ -14,7 +14,7 @@ paddle1 = turtle.Turtle()
 paddle1.goto(-350, 0)
 paddle1.penup()
 paddle1.shape("square")
-paddle1.shapesize(2.9, 0.5)
+paddle1.shapesize(stretch_wid=3, stretch_len=0.5)
 paddle1.color("white")
 paddle1.speed(0)
 
@@ -23,7 +23,7 @@ paddle2 = turtle.Turtle()
 paddle2.goto(350, 0)
 paddle2.penup()
 paddle2.shape("square")
-paddle2.shapesize(2.9, 0.5)
+paddle2.shapesize(stretch_wid=3, stretch_len=0.5)
 paddle2.color("white")
 paddle2.speed(0)
 
@@ -92,7 +92,7 @@ while True:
         ball.dx *= -1
 
     # Ball hitting the paddles
-    if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
+    if ball.xcor() > 340 and ball.xcor() <= 350 and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
         ball.dx *= -1
 
     if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
