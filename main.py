@@ -34,9 +34,8 @@ ball.penup()
 ball.shape("circle")
 ball.color("white")
 ball.speed(0)
-ball.dx = 0.7
-ball.dy = 0.7
-
+ball.dx = 0.5
+ball.dy = 0.5
 
 # Functions for moving paddles
 def left_up():
@@ -86,10 +85,15 @@ while True:
 
     if ball.xcor() > 390:
         ball.goto(0, 0)
-        time.sleep(0.2)
         ball.dx *= -1
-
     
     if ball.xcor() < -390:
         ball.goto(0, 0)
+        ball.dx *= -1
+
+    # Ball hitting the paddles
+    if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
+        ball.dx *= -1
+
+    if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
         ball.dx *= -1
