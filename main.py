@@ -35,7 +35,7 @@ ball.shape("circle")
 ball.color("white")
 ball.speed(0)
 ball.dx = 0.5
-ball.dy = 0.5
+ball.dy = -0.5
 
 # Functions for moving paddles
 def left_up():
@@ -65,6 +65,10 @@ wn.onkeypress(left_down, "s")
 wn.onkeypress(right_up, "Up")
 wn.onkeypress(right_down, "Down")
 
+# Initialize scores
+playerA = 0
+playerB = 0
+
 
 # Events mainloop
 while True:
@@ -73,7 +77,7 @@ while True:
     # Move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
-
+                                
     # Check the borders
     if ball.ycor() > 290:
         ball.sety(290)
@@ -92,8 +96,10 @@ while True:
         ball.dx *= -1
 
     # Ball hitting the paddles
-    if ball.xcor() > 340 and ball.xcor() <= 350 and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
+        ball.setx(340)
         ball.dx *= -1
 
-    if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
+        ball.setx(-340)
         ball.dx *= -1
