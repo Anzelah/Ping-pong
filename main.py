@@ -1,5 +1,5 @@
 import turtle
-import time
+import winsound
 
 
 # Create your window/screen
@@ -111,6 +111,7 @@ while True:
         playerA += 1
         pen.clear()
         pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
+        winsound.PlaySound("Fail.mp3", winsound.SND_ASYNC)
 
     
     if ball.xcor() < -390:
@@ -119,12 +120,17 @@ while True:
         playerB += 1
         pen.clear()
         pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
+        winsound.PlaySound("Fail.mp3", winsound.SND_ASYNC)
+
 
     # Ball hitting the paddles
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
+        winsound.PlaySound("./Effects/Paddle.mp3", winsound.SND_ASYNC)
         ball.setx(340)
         ball.dx *= -1
 
+
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
+        winsound.PlaySound("./Effects/Paddle.mp3", winsound.SND_ASYNC)
         ball.setx(-340)
         ball.dx *= -1
