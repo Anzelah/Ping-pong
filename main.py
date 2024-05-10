@@ -68,9 +68,9 @@ wn.onkeypress(right_down, "Down")
 # Draw the middle line
 line = turtle.Turtle()
 line.goto(0, 0)
-line.pendown()
 line.shape("square")
 line.shapesize(stretch_wid=35, stretch_len=0.02)
+line.pendown()
 line.color("white")
 line.speed(0)
 
