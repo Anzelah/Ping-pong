@@ -65,9 +65,27 @@ wn.onkeypress(left_down, "s")
 wn.onkeypress(right_up, "Up")
 wn.onkeypress(right_down, "Down")
 
+# Draw the middle line
+line = turtle.Turtle()
+line.goto(0, 0)
+line.pendown()
+line.shape("square")
+line.shapesize(stretch_wid=35, stretch_len=0.02)
+line.color("white")
+line.speed(0)
+
 # Initialize scores
 playerA = 0
 playerB = 0
+
+# Draw the scoreboard
+pen = turtle.Turtle()
+pen.goto(0, 260)
+pen.speed(0)
+pen.penup()
+pen.color("white")
+pen.write("0    0", align="center", font=("Times New Roman", 25, "normal") )
+pen.ht()
 
 
 # Events mainloop
