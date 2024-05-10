@@ -108,10 +108,17 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0, 0)
         ball.dx *= -1
+        playerA += 1
+        pen.clear()
+        pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
+
     
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
+        playerB += 1
+        pen.clear()
+        pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
 
     # Ball hitting the paddles
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < (paddle2.ycor() +30) and ball.ycor() > (paddle2.ycor() - 30)):
