@@ -109,6 +109,8 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0, 0)
         ball.dx *= -1
+        ball.dx = 0.5
+        ball.dy = -0.5
         playerA += 1
         pen.clear()
         pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
@@ -118,6 +120,8 @@ while True:
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
+        ball.dx = 0.5
+        ball.dy = -0.5
         playerB += 1
         pen.clear()
         pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )    
