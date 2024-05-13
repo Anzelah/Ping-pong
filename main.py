@@ -129,11 +129,17 @@ while True:
         winsound.PlaySound("Paddle.wav", winsound.SND_ASYNC)
         ball.setx(340)
         ball.dx *= -1
+        ball.dx *= 1.05
+        ball.dy *= 1.05
+        
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
         winsound.PlaySound("Paddle.wav", winsound.SND_ASYNC)
         ball.setx(-340)
         ball.dx *= -1
+        ball.dx *= 1.05
+        ball.dy *= 1.05
+        
 
 
 
