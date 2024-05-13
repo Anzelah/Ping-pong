@@ -107,22 +107,21 @@ while True:
         ball.dy *= -1
 
     if ball.xcor() > 390:
-        winsound.PlaySound("Fail.wav", winsound.SND_ASYNC)
         ball.goto(0, 0)
         ball.dx *= -1
         playerA += 1
         pen.clear()
         pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
+        winsound.PlaySound("Fail.wav", winsound.SND_ASYNC)
 
     
     if ball.xcor() < -390:
-        winsound.PlaySound("Fail.wav", winsound.SND_ASYNC)
         ball.goto(0, 0)
         ball.dx *= -1
         playerB += 1
         pen.clear()
-        pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )
-        
+        pen.write("{}    {}".format(playerA, playerB), align="center", font=("Times New Roman", 25, "normal") )    
+        winsound.PlaySound("Fail.wav", winsound.SND_ASYNC)
 
 
     # Ball hitting the paddles
@@ -131,8 +130,24 @@ while True:
         ball.setx(340)
         ball.dx *= -1
 
-
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < (paddle1.ycor() +30) and ball.ycor() > (paddle1.ycor() - 30)):
         winsound.PlaySound("Paddle.wav", winsound.SND_ASYNC)
         ball.setx(-340)
         ball.dx *= -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
